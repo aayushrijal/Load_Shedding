@@ -27,7 +27,6 @@ if((temp1>temp3)&&(temp1<temp4))
 }
 if(flag==1)
 {
-document.bgColor="Orange";
 	alert("The time remaining is"+temp5+"Hours and "+countm+" minutes");
 var counter=function()
 {
@@ -49,13 +48,12 @@ if(temp5==-1&&count==0)
 	clearInterval(intr);
 }
 count--;
-document.getElementById("timer").innerHTML="Tero gharma"+temp5+"Hours\t"+countm+"minutes\t"+count+"secs pachi matra batti balcha";
+document.getElementById("timer").innerHTML=temp5+"Hours\t"+countm+"minutes\t"+count+"secs";
 }
 var intr=setInterval(counter,1000);
 }
 else
 {
-document.bgColor="Yellow";
 alert("Batti Gako chaina");
 }
 }
