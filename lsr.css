@@ -3,34 +3,34 @@ html{
 	}
 	
 section{
-	height: auto;
-	margin: 50px 0 0 0;
+	height:auto;
+	margin: 40px 0 0 0;
 	background-color: #456;
 	box-shadow: 2px 4px 4px grey;
+	position: ;
 	}
-	
+
 header{
 	padding: 30px 0 10px 30px;
 	color: #fff;
-	font: small-caps 45px arial;
+	font: small-caps 45px /*'Nova Square', cursive*/arial;
+	text-align: center;
 	}
-	
+
 nav{
-	padding: 10px 0 10px 30px;
+	position: inline;
+	padding: 25px 0 10px 30px;
 	color: #fff;
-	font: small-caps 20px arial;
 	}
 	
 nav a:hover{
 	border: 1px solid #fff;
-	padding: 2px 5px;
-	font: small-caps 22px arial;
+	padding: 2px 3px;
 	}
 	
 #search_group{
-	padding: 10px 0 10px 30px;
+	padding: 30px 0 10px 30px;
 	color: #fff;
-	font: small-caps 20px arial;
 	}
 	
 .search_box{
@@ -40,25 +40,25 @@ nav a:hover{
 	width: 200px;
 	height: 20px;
 	}
-	
+
+#search{
+	margin: -6px 1px;
+	}
 #routine{
 	color: #fff;
 	text-align: center;
-	padding: 2px 30px;
-	font: small-caps 20px arial;
+	padding: 50px 30px;
 	}
 	
 footer{
 	text-align: right;
 	padding: 30px 90px 40px 30px;
 	color: #fff;
-	font: small-caps 20px arial;
 	}
 	
 footer a:hover{
 	border: 1px solid #fff;
 	padding: 2px 5px;
-	font: small-caps 22px arial;
 	}
 
 hr {
@@ -69,7 +69,7 @@ hr {
 #quote_left, #quote_right{
 	position: inline;
 	font-size: 6em;
-	opacity: 0.1;
+	color:rgba(255,255,255, 0.09);
 	}
 	
 #quote_left{
@@ -79,14 +79,8 @@ hr {
 	float: right;
 	}
 	
-#quote_left a:hover{
-	color: #000;
-	opacity: 1;
-	}
-	
-#quote_right a:hover{
-	color: #000;
-	opacity: 1;
+#quote_left a:hover, #quote_right a:hover{
+	color:rgba(255,255,255, 0.5);
 	}
 img #search{
 	position: inline;
@@ -95,3 +89,6 @@ img #search{
 	width: 20px;
 	}
 	
+nav, nav a:hover, #search_group, #routine, footer, footer a:hover, h1{
+	font: small-caps 20px /*'Nova Square', cursive*/arial;
+	}
