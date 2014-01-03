@@ -17,24 +17,24 @@ for(var i=0;i<3;i++)
 temp3=a[temp2][i]/100;
 temp3=parseInt(temp3);
 temp4=a[temp2][i]%100;
-document.getElementById('time'+[i]).innerHTML="Time:"+temp3+"-"+temp4;
+document.getElementById('time'+[i]).innerHTML=temp3+" - "+temp4;
 if((temp1>temp3)&&(temp1<temp4))
 {
-	temp5=temp4-temp1;
-	temp5=temp5-1;
-	flag=1;
+        temp5=temp4-temp1;
+        temp5=temp5-1;
+        flag=1;
 }
 }
 if(flag==1)
 {
-	alert("The time remaining is"+temp5+"Hours and "+countm+" minutes");
+        /*alert("The time remaining is "+temp5+" Hours and "+countm+" minutes");*/
 var counter=function()
 {
 if(count==0)
 {
-	countm--;
-	if(countm>0)
-	count=59;
+        countm--;
+        if(countm>0)
+        count=60;
 if(countm==0)
 {
 temp5--;
@@ -44,17 +44,16 @@ countm=59;
 }
 if(temp5==-1&&count==0)
 {
-	alert("Batti Aayo");
-	clearInterval(intr);
+        /*alert("Batti Aayo");*/
+        clearInterval(intr);
 }
 count--;
-document.getElementById("timer").innerHTML=temp5+"Hours\t"+countm+"minutes\t"+count+"secs";
+document.getElementById("timer").innerHTML=" "+temp5+" :\t"+countm+" :\t"+count;
 }
 var intr=setInterval(counter,1000);
 }
 else
 {
-alert("Batti Gako chaina");
+/*alert("Batti Gako chaina");*/
 }
 }
-
