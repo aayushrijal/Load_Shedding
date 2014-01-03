@@ -1,59 +1,73 @@
 var a=[[710,1316,1922],[811,1417,2023],[609,1215,1821],[508,1114,1720],[407,1013,1619],[711,1621],[912,1518,2124]];
 var now=new Date();
-var temp1=0,temp2=0,temp3=0,temp4=0,temp5=0,flag;//var to store the pointer for routine
-var count=now.getHours();
-var countm=60-now.getMinutes();
+var day=now.getDay();
+var our=now.getHours();
+var rem;
+var mint=60-now.getMinutes();
 function ace(number)
 {
-flag=0;
-temp1=temp2=temp3=temp4=temp5=0;
-temp1=now.getHours();
-temp2=now.getDay();
-temp2=temp2+number-1;
-if(temp2>6)
-temp2=temp2-7;
-for(var i=0;i<3;i++)
+var flag=0,grp_no;
+for(var i=0;i<6;i=i+2)
 {
-temp3=a[temp2][i]/100;
-temp3=parseInt(temp3);
-temp4=a[temp2][i]%100;
-document.getElementById('time'+[i]).innerHTML=temp3+" - "+temp4;
-if((temp1>temp3)&&(temp1<temp4))
+grp_no=number+day-2;
+if(grp_no>6)
+grp_no=grp_no-7;
+var ini=a[grp_no][i];
+var end=a[grp_no][i+1];
+var j=i/2;
+document.getElementById('time'+[j]).innerHTML=ini+" - "+end;
+if((our>=ini)&&(our<end))
 {
-        temp5=temp4-temp1;
-        temp5=temp5-1;
-        flag=1;
-}
-}
-if(flag==1)
-{
-        /*alert("The time remaining is "+temp5+" Hours and "+countm+" minutes");*/
-var counter=function()
-{
-if(count==0)
-{
-        countm--;
-        if(countm>0)
-        count=60;
-if(countm==0)
-{
-temp5--;
-if(temp5>0)
-countm=59;
-}
-}
-if(temp5==-1&&count==0)
-{
-        /*alert("Batti Aayo");*/
-        clearInterval(intr);
-}
-count--;
-document.getElementById("timer").innerHTML=" "+temp5+" :\t"+countm+" :\t"+count;
-}
-var intr=setInterval(counter,1000);
+rem=end-our-1;
+flag=2;
 }
 else
 {
-/*alert("Batti Gako chaina");*/
+	if((our<ini)&&(flag!=1))
+	{
+		rem=ini-our-1;
+		flag=1;
+		}
+	if(flag==0)
+	{
+		rem=24-our-1+a[grp_no+1][0];
+		}
 }
+}
+mint=60-mint;
+var sec=59;
+var tick_tock=function()
+{
+if(sec==-1)
+{
+	if(mint!=0)
+	{
+		mint--;
+	}
+	else
+	{
+		mint=59;
+		if(rem!=0)
+		{
+			rem--;
+		}
+		else
+		{
+			ace(number);
+		}
+	}
+sec=59;
+}
+else
+{
+sec--;
+}
+var type="for Electricity";
+if(flag==1)
+{
+type="for cutoff";
+}
+document.getElementById("timer").innerHTML=rem+"hour "+mint+" minutes and "+sec+"seconds "+type;
+}
+setInterval(tick_tock,1000);
 }
