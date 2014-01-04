@@ -1,11 +1,16 @@
 var a=[[710,1316,1922],[811,1417,2023],[609,1215,1821],[508,1114,1720],[407,1013,1619],[711,1621],[912,1518,2124]];
+//var darray=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 var now=new Date();
 var day=now.getDay();
 var our=now.getHours();
 var rem;
+var intid;
 var mint=60-now.getMinutes();
+//rem=darray[day];
+//document.getElementById("daytwo").innerHTML=rem;
 function ace(number)
 {
+clearInterval(intid);
 var flag=0,grp_no;
 for(var i=0;i<6;i=i+2)
 {
@@ -34,11 +39,13 @@ else
 		}
 }
 }
+if(flag!=2)
+flag=1;
 mint=60-mint;
 var sec=59;
 var tick_tock=function()
 {
-if(sec==-1)
+if(sec==0)
 {
 	if(mint!=0)
 	{
@@ -65,9 +72,9 @@ sec--;
 var type="for Electricity";
 if(flag==1)
 {
-type="for cutoff";
+type="for Cutoff";
 }
 document.getElementById("timer").innerHTML=rem+"hour "+mint+" minutes and "+sec+"seconds "+type;
 }
-setInterval(tick_tock,1000);
+intid=setInterval(function(){tick_tock();},1000);
 }
