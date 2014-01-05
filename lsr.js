@@ -6,16 +6,18 @@ var our=now.getHours();
 var rem,day_chg=day;
 var intid,day_select,dselect_condn,day_flag=1;
 var mint=now.getMinutes();
-/*window.onload = function() {
+var mint=now.getMinutes();
+window.onload = function() {
 ace(1);
 document.getElementById('dayname').innerHTML=darray[day];
- }*/
+ }
 
 function ace(number)
 {
 if(day_flag==1)
 {
 document.getElementById('dayname').innerHTML=darray[day];
+day_chg=day;
 }
 day_flag=1;
 day_select=number;
@@ -29,10 +31,25 @@ if(grp_no<0)
 grp_no=7-grp_no;
 }
 var ini=a[grp_no][i];
+if(ini>12)
+{
+ampm1=ini-12;
+ampm1+="pm";
+}
+else
+ampm1=ini+"am";
 var end=a[grp_no][i+1];
+if(end>12)
+{
+ampm2=end-12;
+ampm2+="pm";
+}
+else
+ampm2=end+"am";
+
 var j=i/2;
 if(ini!=undefined)
-	document.getElementById('time'+[j]).innerHTML=ini+" - "+end;
+	document.getElementById('time'+[j]).innerHTML=ampm1+" - "+ampm2;
 else
 	document.getElementById('time'+[j]).innerHTML=" ";
 if((our>=ini)&&(our<end)&&(flag==0))//batti gako belama
@@ -101,10 +118,11 @@ function prv()
 		day_chg--;
 	document.getElementById('dayname').innerHTML=darray[day_chg];
 	day_flag=0;
-	day_condn=day_select;
-	if(day_select==0)
-	day_select=7;
-	ace(day_select-1);
+	dselect_condn=day_select;
+	if(dselect_condn==6)//
+	dselect_condn=0;
+	ace(dselect_condn+1);
+	
 }
 function nxt()
 {
@@ -114,8 +132,8 @@ function nxt()
 		day_chg++;
 	document.getElementById('dayname').innerHTML=darray[day_chg];
 	day_flag=0;
-	if(day_select==6)
-	day_select=-1;
-	ace(day_select+1);
-
+	dselect_condn=day_select;
+	if(dselect_condn==1)//
+	dselect_condn=8;
+	ace(dselect_condn-1);
 }
