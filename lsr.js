@@ -1,46 +1,60 @@
-var a=[[710,1316,1922],[811,1417,2023],[609,1215,1821],[508,1114,1720],[407,1013,1619],[711,1621],[912,1518,2124]];
-//var darray=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var a=[[3,9,13,18],[4,10,14,19],[5,11,15,21],[6,13,17,22],[8,14,18,23],[9,15,18,23],[10,17,19,24]];
+var darray=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 var now=new Date();
 var day=now.getDay();
 var our=now.getHours();
-var rem;
-var intid;
-var mint=60-now.getMinutes();
-//rem=darray[day];
-//document.getElementById("daytwo").innerHTML=rem;
+var rem,day_chg=day;
+var intid,day_select,dselect_condn,day_flag=1;
+var mint=now.getMinutes();
+/*window.onload = function() {
+ace(1);
+document.getElementById('dayname').innerHTML=darray[day];
+ }*/
+
 function ace(number)
 {
+if(day_flag==1)
+{
+document.getElementById('dayname').innerHTML=darray[day];
+}
+day_flag=1;
+day_select=number;
 clearInterval(intid);
 var flag=0,grp_no;
 for(var i=0;i<6;i=i+2)
 {
-grp_no=number+day-2;
-if(grp_no>6)
-grp_no=grp_no-7;
+grp_no=number-day-1;
+if(grp_no<0)
+{
+grp_no=7-grp_no;
+}
 var ini=a[grp_no][i];
 var end=a[grp_no][i+1];
 var j=i/2;
-document.getElementById('time'+[j]).innerHTML=ini+" - "+end;
-if((our>=ini)&&(our<end))
+if(ini!=undefined)
+	document.getElementById('time'+[j]).innerHTML=ini+" - "+end;
+else
+	document.getElementById('time'+[j]).innerHTML=" ";
+if((our>=ini)&&(our<end)&&(flag==0))//batti gako belama
 {
-rem=end-our-1;
-flag=2;
+	rem=end-our-1;
+	flag=2;
 }
 else
 {
-	if((our<ini)&&(flag!=1))
+	if((our<ini)&&(flag==0))
 	{
 		rem=ini-our-1;
 		flag=1;
 		}
-	if(flag==0)
+	}
+}
+if(flag==0)
 	{
 		rem=24-our-1+a[grp_no+1][0];
-		}
+		flag=1;
 }
-}
-if(flag!=2)
-flag=1;
+
 mint=60-mint;
 var sec=59;
 var tick_tock=function()
@@ -74,7 +88,34 @@ if(flag==1)
 {
 type="for Cutoff";
 }
-document.getElementById("timer").innerHTML=rem+"hour "+mint+" minutes and "+sec+"seconds "+type;
+document.getElementById("timer").innerHTML=" "+rem+" hour "+mint+" minutes and "+sec+" seconds "+type;
 }
 intid=setInterval(function(){tick_tock();},1000);
+}
+
+function prv()
+{
+	if(day_chg==0)
+		day_chg=6;
+	else
+		day_chg--;
+	document.getElementById('dayname').innerHTML=darray[day_chg];
+	day_flag=0;
+	day_condn=day_select;
+	if(day_select==0)
+	day_select=7;
+	ace(day_select-1);
+}
+function nxt()
+{
+	if(day_chg==6)
+		day_chg=0;
+	else
+		day_chg++;
+	document.getElementById('dayname').innerHTML=darray[day_chg];
+	day_flag=0;
+	if(day_select==6)
+	day_select=-1;
+	ace(day_select+1);
+
 }
