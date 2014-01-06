@@ -7,14 +7,18 @@ var rem,day_chg,grp_no;
 var intid,day_select,dselect_condn,day_flag=1;
 var mint=now.getMinutes();
 var ampm1,ampm2;
+var el = document.getElementById("groupshow");
+
 window.onload = function() {
 ace(1);
 document.getElementById('dayname').innerHTML=darray[day];
-groupUnhide(); 
 }
 
 function ace(number)
 {
+	document.getElementById("grp_switch").style.display="block";
+	el.style.display = "none";
+
 if(day_flag==1)
 {
 document.getElementById('dayname').innerHTML=darray[day];
@@ -138,3 +142,15 @@ function nxt()
 	dselect_condn=8;
 	ace(dselect_condn-1);
 }
+
+function groupUnhide() {
+	var display = el.style.display;
+
+        if (display == "none") {
+            el.style.display = "block";
+	document.getElementById("grp_switch").style.display="none";
+        } else {
+	
+            el.style.display = "none";
+        }
+    }
