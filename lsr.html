@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> load shedding routine</title>
-<link href='http://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' type='text/css' href='lsr.css'>
-
-<script type='text/javascript' src='lsr.js'></script>
+	<title> load shedding routine</title>
+	<link href='http://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>
+	<link rel='stylesheet' type='text/css' href='lsr.css'>
 </head>
 
 <body>
 <section>
         <header>Nepal Load Shedding Routine</header>
         <div id='search_group'>Search Via Location  <input type='searchbox' class='search_box' /><a href='#'><img src='search.png' id='search'></a></div>
-        <nav><a>Select Group      </a>
-			<a onClick="ace(1)">    Group 1</a>
-			<a onClick="ace(2)">Group 2</a>
-			<a onClick="ace(3)">Group 3</a>
-			<a onClick="ace(4)">Group 4</a>
-			<a onClick="ace(5)">Group 5</a>
-			<a onClick="ace(6)">Group 6</a>
-			<a onClick="ace(7)">Group 7</a>
-        </nav>
+        <nav>
+        	<a onclick="groupUnhide()" id="grp_switch">Select Group</a>
+		<div id="groupshow">
+			<a onClick="ace(1)" >One</a>
+			<a onClick="ace(2)" >Two</a>
+			<a onClick="ace(3)" >Three</a>
+			<a onClick="ace(4)" >Four</a>
+			<a onClick="ace(5)" >Five</a>
+			<a onClick="ace(6)" >Six</a>
+			<a onClick="ace(7)" >Seven</a>
+		</div>        
+	</nav>
         
         <div id='routine'>
-        <div id='quote_left'><a><</a></div>
-        <div id='quote_right'><a>></a></div>
-        <strong>SUNDAY</strong>
+        	<div id='quote_left' onClick="prv()"><a><</a></div>
+        	<div id='quote_right' onClick="nxt()"><a>></a></div>
+        	<strong id='dayname'>DAY</strong>
         
-        <hr>
-        <p id='time0' ></p>
-        <br>
-        <p id='time1' ></p>
-        <br>
-        <p id='time2' ></p>
-        
-        <hr>
-        Time Remaining:<span id='timer'></span>
+        		<hr>
+        	<p id='time0' ></p>
+        		<br>
+        	<p id='time1' ></p>
+        		<br>
+        	<p id='time2' ></p>
+                	<hr>
+        	Time Remaining:<span id='timer'></span>
         </div>
 
 <footer><a>About Us</a></footer>
