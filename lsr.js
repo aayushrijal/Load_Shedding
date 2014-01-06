@@ -3,14 +3,15 @@ var darray=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturda
 var now=new Date();
 var day=now.getDay();
 var our=now.getHours();
-var rem,day_chg=day;
+var rem,day_chg,grp_no;
 var intid,day_select,dselect_condn,day_flag=1;
 var mint=now.getMinutes();
-var mint=now.getMinutes();
+var ampm1,ampm2;
 window.onload = function() {
 ace(1);
 document.getElementById('dayname').innerHTML=darray[day];
- }
+groupUnhide(); 
+}
 
 function ace(number)
 {
@@ -22,13 +23,13 @@ day_chg=day;
 day_flag=1;
 day_select=number;
 clearInterval(intid);
-var flag=0,grp_no;
+var flag=0;
 for(var i=0;i<6;i=i+2)
 {
 grp_no=number-day-1;
 if(grp_no<0)
 {
-grp_no=7-grp_no;
+grp_no=7+grp_no;
 }
 var ini=a[grp_no][i];
 if(ini>12)
