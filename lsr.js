@@ -10,6 +10,7 @@ var rem,day_chg,grp_no;
 //intid=ClocktickingFunctionSwitch day_select=next&previousfunction day_flag=checkingwhetherit's nxt()prv() or Group select
 var intid,day_select,dselect_condn,day_flag=1;
 var mint=now.getMinutes();
+mint=60-mint;//minutes remaining
 var sec=59;
 //ampm1&2 start and end times of the day with comverted 12 hour values from 24 hour ones
 var ampm1,ampm2;
@@ -22,7 +23,7 @@ ace(1);//to show the routine of group 1 on start
 }
 
 function ace(number){
-	//document.getElementById("grp_switch").style.visibility="visible";//set the visibility of group switch
+	document.getElementById("grp_switch").style.visibility="visible";//set the visibility of group switch
 	grp123.style.visibility = "hidden";//hide the group list on selecting a group on list
 
 if(day_flag==1){//if it was called by the grouplist by the user
@@ -82,10 +83,12 @@ else
 //if flag is unset then the time remaining is compared with the first cutoff time of next day and the flag is again set to represent live state
 if(flag==0)
 	{
-		rem=24-our-1+a[grp_no+1][0];
+		if(grp_no==0)
+			rem=24-our-1+a[6][0];
+		else
+			rem=24-our-1+a[grp_no-1][0];
 		flag=1;
 }
-mint=60-mint;//minutes remaining
 //function for the countdown from current time to zerro
 var tick_tock=function()
 {
@@ -157,7 +160,7 @@ function nxt()
 	document.getElementById('dayname').innerHTML=darray[day_chg];
 	day_flag=0;
 	dselect_condn=day_select;
-	if(dselect_condn==1)//
+	if(dselect_condn==1)
 	dselect_condn=8;
 	ace(dselect_condn-1);
 }
@@ -175,3 +178,11 @@ function groupUnhide() {
             el.style.display = "none";
         }*/
     }
+//function to switch the display of about us's content
+ function contact(){
+	if(document.getElementById("background").style.display=="none")
+	document.getElementById("background").style.display="block";
+	else
+	document.getElementById("background").style.display="none";		
+}
+   
