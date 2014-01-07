@@ -3,29 +3,46 @@ html{
 	}
 	
 section{
-	height:auto;
-	margin: 40px 0 0 0;
+	height: auto;
+	margin: 15px 0 0 0;
 	background-color: #456;
 	box-shadow: 2px 4px 4px grey;
-	position: ;
+	color: #fff;
 	}
 
 header{
 	padding: 30px 0 10px 30px;
 	color: #fff;
-	font: small-caps 45px /*'Nova Square', cursive*/arial;
+	font: small-caps 300% /*'Nova Square', cursive*/arial;
 	text-align: center;
 	}
 
 nav{
-	position: inline;
-	padding: 25px 0 10px 30px;
+	padding: 15px 0 10px 30px;
 	color: #fff;
 	}
 	
 nav a:hover{
 	border: 1px solid #fff;
 	padding: 2px 3px;
+	cursor: hand;
+	cursor: pointer;
+	transition: all 0.1s;
+	}
+	
+#groupshow{
+	display: inline;
+	}
+.navbar{
+	display: inline;
+	}
+
+.navbar:hover{
+	border: 1px solid #fff;
+	padding: 2px 3px;
+	cursor: hand;
+	cursor: pointer;
+	transition: all 0.3s;
 	}
 	
 #search_group{
@@ -44,6 +61,7 @@ nav a:hover{
 #search{
 	margin: -6px 1px;
 	}
+
 #routine{
 	color: #fff;
 	text-align: center;
@@ -52,24 +70,37 @@ nav a:hover{
 	
 footer{
 	text-align: right;
-	padding: 30px 90px 40px 30px;
+	padding: 30px 90px 20px 30px;
 	color: #fff;
+	
 	}
 	
 footer a:hover{
 	border: 1px solid #fff;
 	padding: 2px 5px;
+	cursor: hand;
+	cursor: pointer;
+	transition: all 0.3s;
 	}
 
-hr {
-	width: 430px;
+hr{
+	width: 45%;
 	border-color: #ccc;
 	}	
 	
+.h1{
+	width: 45%;
+	border-color: red;
+	}
+
+.h2{
+	width: 45%;
+	border-color: blue;
+	}	
 #quote_left, #quote_right{
 	position: inline;
-	font-size: 6em;
-	color:rgba(255,255,255, 0.09);
+	font-size: 3em;
+	color: rgba(0,0,0, 0.09);
 	}
 	
 #quote_left{
@@ -80,6 +111,8 @@ hr {
 	}
 	
 #quote_left a:hover, #quote_right a:hover{
+	cursor: hand;
+	cursor: pointer;
 	color:rgba(255,255,255, 0.5);
 	}
 img #search{
@@ -88,7 +121,98 @@ img #search{
 	height: 20px;
 	width: 20px;
 	}
-	
+
 nav, nav a:hover, #search_group, #routine, footer, footer a:hover, h1{
 	font: small-caps 20px /*'Nova Square', cursive*/arial;
+	}
+	
+section #background{
+	background-color: rgba(000,000,000, 0.3);
+	height: auto;
+	}
+	
+#about_us{
+	font-family: calibri;
+	padding: 1px 0 10px 30px;
+	}
+
+.nlsr{
+	font-size: 16x;
+	}
+
+.developed_by{
+	font-size: 18px;
+	}
+
+.developers{
+	padding: 10px 0 0 30px;
+	}
+
+.picture img{
+	float: left;
+	display: inline-block;
+	overflow: hidden;
+	margin: 0 10px 0 30px;
+	border: 0px solid #000;
+	box-shadow: 1px 1.5px 2px #000;
+
+	}
+	
+.aashish, .aayush, .ankit{
+	float: left;
+	display: inline-block;
+		}
+		
+.name:hover{
+	text-decoration: underline;
+	cursor: hand;
+	cursor: pointer;
+	}
+.name{
+	color: #fff;
+	padding: 0 0 0 4px;
+	}
+
+.post{
+	font-size: 12px;
+	font-style: italic;
+	padding: 0 0 0 4px;
+	}
+	
+.red img{
+	margin: 0 90px 0 0;
+	border: 0px solid #000;
+	box-shadow: 1px 1.5px 2px #000;
+	float: right;
+	}
+	
+.company{
+	float: right;
+	font: small-caps 19px calibri;
+	padding: 0 90px 0 0;
+	}
+		
+#tools .setting{
+	float: left;
+	margin: 10px 0 0 50px;
+	display: inline-block;
+	}
+	
+#tools .update, #tools .download{
+	float: left;
+	margin: 10px 0 0 10px;
+	display: inline-block;
+	}
+	
+.setting img:hover, .update img:hover, .download img:hover{	
+	cursor: hand;
+	cursor: pointer;
+	}
+	
+#version{
+	float: right;
+	font-family: Calibri;
+	font-size: 15px;
+	margin: 0 90px 0 0;
+	overflow: hidden;
 	}
