@@ -167,7 +167,7 @@ function nxt()
 //function to unhide the group list after the group switch has been pressed
 function groupUnhide() {
 	grp123.style.visibility="visible";
-	document.getElementById("grp_switch").style.visibility="hidden";
+	document.getElementById("grp_switch").style.visibility="visible";
 	/*var display = el.style.display;
 
         if (display == "none") {
