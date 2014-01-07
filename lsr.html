@@ -1,45 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> load shedding routine</title>
-	<link href='http://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>
-	<link rel='stylesheet' type='text/css' href='lsr.css'>
+<title> load shedding routine</title>
+<!--<link href='http://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>-->
+<link rel='stylesheet' type='text/css' href='lsr.css'>
+
+
 </head>
 
 <body>
 <section>
         <header>Nepal Load Shedding Routine</header>
-        <div id='search_group'>Search Via Location  <input type='searchbox' class='search_box' /><a href='#'><img src='search.png' id='search'></a></div>
-        <nav>
-        	<a onclick="groupUnhide()" id="grp_switch">Select Group</a>
-		<div id="groupshow">
-			<a onClick="ace(1)" >One</a>
-			<a onClick="ace(2)" >Two</a>
-			<a onClick="ace(3)" >Three</a>
-			<a onClick="ace(4)" >Four</a>
-			<a onClick="ace(5)" >Five</a>
-			<a onClick="ace(6)" >Six</a>
-			<a onClick="ace(7)" >Seven</a>
-		</div>        
-	</nav>
+        <div id='search_group'>Search Via Location  <input type='searchbox' class='search_box' placeholder=' Your location here'/><a href='#'><img src='search.png' id='search'></a></div>
+        
+			<nav><a onclick="groupUnhide()" id='grp_switch'>Select Group</a>
+			<div id='groupshow'>	
+				<div onClick="ace(1)" class='navbar'>One</div>
+				<div onClick="ace(2)" class='navbar'>Two</div>
+				<div onClick="ace(3)" class='navbar'>Three</div>
+				<div onClick="ace(4)" class='navbar'>Four</div>
+				<div onClick="ace(5)" class='navbar'>Five</div>
+				<div onClick="ace(6)" class='navbar'>Six</div>
+				<div onClick="ace(7)" class='navbar'>Seven</div>
+			</div>
+			</nav>
         
         <div id='routine'>
-        	<div id='quote_left' onClick="prv()"><a><</a></div>
-        	<div id='quote_right' onClick="nxt()"><a>></a></div>
-        	<strong id='dayname'>DAY</strong>
-        
-        		<hr>
-        	<p id='time0' ></p>
-        		<br>
-        	<p id='time1' ></p>
-        		<br>
-        	<p id='time2' ></p>
-                	<hr>
-        	Time Remaining:<span id='timer'></span>
+        <div id='quote_left' onClick='prv()'><a><img src='moveleft.svg'></a></div>
+        <div id='quote_right' onClick='nxt()'><a><img src='moveright.svg'></a></div>
+        <div id='dayname'>DAY</div>
+        <hr id='line1'>
+		<br>
+        <div id='time0' class='time'></div>
+        <div id='time1' class='time'></div>
+        <div id='time2' class='time'></div>
+		<br>
+        <hr id='line2'>
+        Time Remaining:<span id='timer'></span>
         </div>
+	<br>
+		<br>
+<div id='tools'>
+	<div class='setting'><a href='#'>
+							<img src='setting.svg	' height='23px' width='23px'>
+						</a>
+	</div>
+	<div class='update'><a href='#'>
+							<img src='update.svg' height='20px' width='20px'>
+						</a>
+	</div>	
+	<div class='download'><a href='#'>
+							<img src='download.svg' height='27px' width='30px'>
+							</a>
+	</div>
+</div>
+	<footer><a>About Us</a></footer>
 
-<footer><a>About Us</a></footer>
+	<div id='background'>
+		<div id='about_us'>
+			<div class='nlsr'><dl><em>Nepal Load shedding Routine(LSR)</em> is a Web Application developed to notify regular people about the timing and schedule of Load Shedding. <q><strong>LET THERE BE LIGHT</strong></q>
+			</dl></div>
+			<br>
+		
+			<div class='developed_by'><dt>Developed By</dt></div>
+				<div class='developers'>
+					<div class='picture'><img src='a2.png' height='50px' width='40px'></div>	
+					<div class='aashish'>
+						<div class='name'><a>Aashish Manandhar</a></div>
+						<div class='post'>Developer</div>
+					</div>
+			
+					<div class='picture'><img src='a1.png' height='50px' width='40px'></div>
+					<div class='aayush'>
+						<div class='name'><a>Aayush Rijal</a></div>
+						<div class='post'>Deginer</div>
+					</div>
+			
+					
+					<div class='picture'><img src='a4.png' height='50px' width='40px'></div>
+					<div class='ankit'>
+						<div class='name'><a>Abhishek Khatri</a></div>
+						<div class='post'>Data Analyst</div>
+					</div>
+					
+					<div class='picture'><img src='a7.png' height='50px' width='40px'></div>
+					<div class='ankit'>
+						<div class='name'><a>Ankit Shrestha</a></div>
+						<div class='post'>Developer</div>
+					</div>
+										
+					<div class='red'>
+						<img src='red.png' height='70px' width='70px'>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<div class='company'>Red Developers</div>
+				
+				</div>
+			<br>
+			<br>
+			<div id='version'>LSR Version 1.0</div>
+			<br>
+		</div>
+	
+	</div>
+
 </section>
-
+<script type='text/javascript' src='lsr.js'></script>
 </body>
 </html>
