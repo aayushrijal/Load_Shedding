@@ -129,6 +129,7 @@ nav, nav a:hover, #search_group, #routine, footer, footer a:hover, h1{
 section #background{
 	background-color: rgba(000,000,000, 0.3);
 	height: auto;
+	display:none;
 	}
 	
 #about_us{
