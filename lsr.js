@@ -180,9 +180,9 @@ function groupUnhide() {
     }
 //function to switch the display of about us's content
  function contact(){
-	if(document.getElementById("background").style.display=="none")
-	document.getElementById("background").style.display="block";
+	if(document.getElementById("background").style.display=="block")
+	document.getElementById("background").style.display="none";
 	else
-	document.getElementById("background").style.display="none";		
+	document.getElementById("background").style.display="block";		
 }
    
