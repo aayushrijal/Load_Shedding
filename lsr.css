@@ -97,12 +97,12 @@ hr{
 	
 .hr1{
 	width: 45%;
-	border-color: red;
+	border-color: #ccc;
 	}
 
 .hr2{
 	width: 45%;
-	border-color: blue;
+	border-color: #9e7;
 	}	
 #quote_left, #quote_right{
 	position: inline;
