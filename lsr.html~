@@ -190,7 +190,6 @@
         
         </div>
 	<div id='checkout'>
-	<div id='location_topic'>Location Select</a>
 	<a id='close_X' onClick='close_location()'>x</a>
 	<div id='selectplace'>
 	<a onClick="slctplce(1)">Patan</a>
