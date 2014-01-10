@@ -3,6 +3,7 @@ var a=[[3,9,13,18],[4,10,14,19],[5,11,15,21],[6,13,17,22],[8,14,18,23],[9,15,18,
 //list of the name of Days
 var darray=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 var now=new Date();
+var todaychecker=0;//to check if the day is today
 var day=now.getDay();//name of day
 var our=now.getHours();//hour of day
 //rem=remainder hour day_chg=dayDisplayChangewrtnxtPrv()group_no=lsgroupwrtday
@@ -38,8 +39,16 @@ function ace(number){
         grp123.style.visibility = "hidden";//hide the group list on selecting a group on list
 
 if(day_flag==1){//if it was called by the grouplist by the user
-document.getElementById('dayname').innerHTML=darray[day];//show today's day value
-day_chg=day;//set today's day value to the temporary variable
+	document.getElementById('dayname').innerHTML=darray[day];//show today's day value
+	clearInterval(intid);
+	day_chg=day;//set today's day value to the temporary variable
+	todaychecker=0;
+}
+if(todaychecker==0){//if the day is today the countdown is displayed	
+	document.getElementById('time_remain').style.visibility='visible';
+}else{
+	document.getElementById('time_remain').style.visibility='hidden';
+	
 }
 day_flag=1;
 day_select=number;
@@ -116,7 +125,7 @@ sec=59;
         sec--;
 }
 //set the type to cutoff for all cases
-var type="for Lights On";
+var type="for Electricity";
 //change the colour of horizontal line according to the state of electricity
 document.getElementById("line1").className="hr1";
 document.getElementById("line2").className="hr1";
@@ -127,7 +136,7 @@ if(flag==1){
         type="for Cutoff";
 }
 //display countdown
-document.getElementById("timer").innerHTML=" "+rem+" : "+mint+" : "+sec+"  "+type;
+document.getElementById("timer").innerHTML=" "+rem+" Hours "+mint+" Minutes and "+sec+" Seconds  "+type;
 }
 intid=setInterval(function(){tick_tock();},1000);//recursive call for the realtime running of countdown function
 }
@@ -141,6 +150,12 @@ function prv()
         }else{
                 day_chg--;
         }
+	if(todaychecker==0){
+		todaychecker=6;
+	}else{
+		todaychecker--;
+	}
+
         //display today's day        
         document.getElementById('dayname').innerHTML=darray[day_chg];
         day_flag=0;//reset the day flag to let the function ace(parameter) know it was called by nxt function not grouplist
@@ -157,6 +172,11 @@ function nxt()
         }else{
                 day_chg++;
         }
+	if(todaychecker==6){
+		todaychecker=0;
+	}else{
+		todaychecker++;
+	}
         document.getElementById('dayname').innerHTML=darray[day_chg];
         day_flag=0;
         dselect_condn=day_select;

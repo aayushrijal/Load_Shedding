@@ -22,7 +22,7 @@
        <?php
                 for($i = 0; $i <= 6 ; $i++){
                         for($j = 0;$j <=3 ;$j++){
-                                echo "b[$i][$j] = $temp_array[$i][$j];";
+                                echo "b[$i][$j] ={ $temp_array[$i][$j];}";
                         }
                 }
         ?>
@@ -119,7 +119,7 @@
         <div id='time2' class='time'></div>
                 <br>
         <hr id='line2'>
-        Time Remaining:<span id='timer'></span>
+       <div id='time_remain'>Time Remaining:<span id='timer'></span></div>
         </div>
         <br>
                 <br>
