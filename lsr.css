@@ -17,6 +17,11 @@ header{
         text-align: center;
         }
 
+a{
+	color: #fff;
+	text-decoration: none;
+	}
+	
 nav{
         padding: 15px 0 5px 25px;
         color: #fff;
@@ -74,7 +79,8 @@ nav a:hover{
         text-align: center;
         padding: 50px 30px;
         }
-        
+
+
 footer{
         text-align: right;
         padding: 30px 90px 20px 30px;
@@ -136,7 +142,7 @@ nav, nav a:hover, #search_group, #routine, footer, footer a:hover, h1{
         }
         
 section #background {
-        background-color: rgba(000,000,000, 0.9);
+        background-color: rgba(000,000,000, 0.7);
         height: auto;
         display: none;
 	position: absolute;
@@ -163,13 +169,6 @@ section #background {
 	left:8%;
 	background-color: rgba(000,000,000, 0.9);
         }
-
-div a:hover{
-        cursor: hand;
-        cursor: pointer;
-        opacity: 0.7;
-        }
-	
 
 #about_us{
         font-family: calibri;
@@ -202,15 +201,15 @@ div a:hover{
         float: left;
         display: inline-block;
                 }
-.X,#close_X{
+/*.X,#close_X{
 	font-size:22px;
 	position:absolute;
 	top:0%;
 	left:97%;
-		}
+		}*/
                 
-.name, .X:hover{
-        text-decoration: underline;
+.name:hover{
+		text-decoration: underline;
         cursor: hand;
         cursor: pointer;
         }
