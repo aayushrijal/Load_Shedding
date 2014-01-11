@@ -102,7 +102,12 @@ footer a:hover{
 hr{
         width: 45%;
         border-color: #ccc;
-        }        
+        }     
+        
+.newhr{
+	text-align: center;
+	margin-left: 30.3%;
+	}
         
 .hr1{
         width: 45%;
