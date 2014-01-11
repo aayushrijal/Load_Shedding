@@ -85,7 +85,6 @@
 
 <head>
 <title> load shedding routine</title>
-<!--<link href='http://fonts.googleapis.com/css?family=Nova+Square' rel='stylesheet' type='text/css'>-->
 <link rel='stylesheet' type='text/css' href='lsr.css'>
 
 
@@ -94,7 +93,7 @@
 <body>
 <section>
         <header>Nepal Load Shedding Routine</header>
-        <div id='search_group'>Pin your Location <input type='searchbox' class='search_box' placeholder=' Your location here'/><a href='#'><img src='location.svg'         height='28px' width='28px' id='search' onClick='location_select()'></a></div>
+        <div id='search_group'>Select your Location <input type='searchbox' class='search_box' placeholder=' Your location here'/><a href='#'><img src='location.svg'         height='28px' width='28px' id='search' onClick='location_select()'></a></div>
         
                         <nav><a onclick="groupUnhide()" id='grp_switch'>Select Group</a>
                         <div id='groupshow'>        
@@ -124,21 +123,11 @@
         <br>
                 <br>
 <div id='tools'>
-        <div class='setting'><a href='#'>
-                                                        <img src='setting.svg' height='23px' width='23px'>
-                                                </a>
-        </div>
-        <div class='update'><a href='#'>
-                                                        <img src='update.svg' height='20px' width='20px'>
-                                                </a>
-        </div>        
-        <div class='download'><a href='#'>
-                                                        <img src='download.svg' height='27px' width='30px'>
-                                                        </a>
-        </div>
+        <div class='setting'><a href='#'><img src='setting.svg' height='23px' width='23px'></a></div>
+        <div class='update'><a href='#'><img src='update.svg' height='20px' width='20px'></a></div>        
+        <div class='download'><a href='#'><img src='download.svg' height='27px' width='30px'></a></div>
 </div>
         <footer><a onClick="contact()">About Us</a></footer>
-
         <div id='background'>
                 <div id='about_us'>
                         <div class='nlsr'><dl><em>Nepal Load shedding Routine(LSR)</em> is a Web Application developed to notify regular people about the timing and schedule of Load Shedding. <q><strong>LET THERE BE LIGHT</strong></q>
@@ -190,169 +179,208 @@
         
         </div>
 	<div id='checkout'>
-	<div id='location_topic'>Location Select</a>
-	<a id='close_X' onClick='close_location()'>x</a>
-	<div id='selectplace'>
-	<a onClick="slctplce(1)">Patan</a>
-	<a onClick="slctplce(2)">Bhaktapur</a>
-	<a onClick="slctplce(3)">Teku</a>
-	<a onClick="slctplce(4)">Baneshwor</a>
-	<a onClick="slctplce(5)">Purano Chabahil</a>
-	<a onClick="slctplce(6)">Naya Chabahil</a>
-	<a onClick="slctplce(7)">Lainchour</a>
-	<a onClick="slctplce(8)">Balaju</a>
-	<a onClick="slctplce(9)">Syuchatar</a>
-	<a onClick="slctplce(10)">Banepa</a>
-	<a onClick="slctplce(11)">Thapathali</a>
-	<a onClick="slctplce(12)">K-2</a>	
-	<a onClick="slctplce(13)">Maharajgunj</a>
-	<a onClick="slctplce(14)">Thimi</a>
-	<a onClick="slctplce(15)">Sundhara</a>
-	<a onClick="slctplce(16)">K-3</a>
-	<a onClick="slctplce(17)">Matatirtha</a>
-	<a onClick="slctplce(18)">Panchkhal</a>
+		<div id='location_topic'>
+			<div class='locate'>Whats Your Location?</div>
+			<a id='close_X' onClick='close_location()'>x</a>
+				<div id='selectplace'>
+				<ul>
+					<li><a onClick="slctplce(8)">Balaju</a></li>
+					<li><a onClick="slctplce(10)">Banepa</a></li>
+					<li><a onClick="slctplce(4)">Baneshwor</a></li>
+					<li><a onClick="slctplce(2)">Bhaktapur</a></li>
+					<li><a onClick="slctplce(12)">K-2</a>	</li>
+					<li><a onClick="slctplce(16)">K-3</a></li>
+					<li><a onClick="slctplce(7)">Lainchour</a></li>
+					<li><a onClick="slctplce(13)">Maharajgunj</a></li>
+					<li><a onClick="slctplce(17)">Matatirtha</a></li>
+					<li><a onClick="slctplce(6)">Naya Chabahil</a></li>
+					<li><a onClick="slctplce(1)">Patan</a></li>
+					<li><a onClick="slctplce(18)">Panchkhal</a></li>
+					<li><a onClick="slctplce(5)">Purano Chabahil</a></li>
+					<li><a onClick="slctplce(15)">Sundhara</a></li>
+					<li><a onClick="slctplce(9)">Syuchatar</a></li>
+					<li><a onClick="slctplce(3)">Teku</a></li>
+					<li><a onClick="slctplce(11)">Thapathali</a></li>					
+					<li><a onClick="slctplce(14)">Thimi</a></li>										
+				</ul>
+				</div>
+				<div id='plce1'>
+				<ul>
+					<li><a onClick="chace(1,1)">MangalBajar</a></li>
+					<li><a onClick="chace(2,1)">Pharphing</a></li>
+					<li><a onClick="chace(3,1)">Patan</a></li>
+					<li><a onClick="chace(4,1)">RingRoad</a></li>
+					<li><a onClick="chace(5,1)"> Saibu</a></li>
+					<li><a onClick="chace(6,1)">Radio Nepal</a></li>
+					<li><a onClick="chace(6,1)">Pulchowk</a></li>
+					<li><a onClick="chace(7,1)">Jawalakhel</a></li>
+					<li><a onClick="chace(7,1)">Chapagaun</a></li>
+				</ul>
+				</div>
+				<div id='plce2'>
+				<ul>
+					<li><a onClick="chace(2,2)">Byashi</a></li>
+					<li><a onClick="chace(5,2)">Katunjey</a></li>
+					<li><a onClick="chace(5,2)">NalinChowk</a></li>
+					<li><a onClick="chace(6,2)">Nagarkot</a></li>
+					<li><a onClick="chace(6,2)">Brick</a></li>
+				</ul>
+				</div>
+				<div id='plce3'>
+				<ul>
+					<li><a onClick="chace(1,3)">Tripureshwor</a></li>
+					<li><a onClick="chace(1,3)">Tahachal</a></li>
+					<li><a onClick="chace(2,3)">Kalimati</a></li>
+					<li><a onClick="chace(3,3)">Thankot</a></li>
+					<li><a onClick="chace(4,3)">Pulchowk</a></li>
+					<li><a onClick="chace(6,3)">Bhimsensthan</a></li>
+					<li><a onClick="chace(7,3)">Kirtipur</a></li>
+				</ul>
+				</div>
+				<div id='plce4'>
+				<ul>
+					<li><a onClick="chace(1,4)">Baneshwor</a></li>
+					<li><a onClick="chace(1,4)">Koteshwor</a></li>
+					<li><a onClick="chace(1,4)">Bagmati</a></li>
+					<li><a onClick="chace(2,4)">Imadol</a></li>
+					<li><a onClick="chace(2,4)">Gothatar</a></li>
+					<li><a onClick="chace(3,4)">Godawari-1</a></li>
+					<li><a onClick="chace(3,4)">Conference-hall</a></li>
+					<li><a onClick="chace(4,4)">New Airport</a></li>
+					<li><a onClick="chace(4,4)">DhobiKhola</a></li>
+					<li><a onClick="chace(5,4)">Purano Airport</a></li>
+					<li><a onClick="chace(6,4)">Lubhu</a></li>
+					<li><a onClick="chace(7,4)">Sankhamul</a></li>
+				</ul>
+				</div>
+				<div id='plce5'>
+				<ul>
+					<li><a onClick="chace(1,5)">Jorpati</a></li>
+					<li><a onClick="chace(3,5)">Naxal</a></li>
+					<li><a onClick="chace(3,5)">Airport</a></li>
+					<li><a onClick="chace(4,5)">Dhobikhola</a></li>
+					<li><a onClick="chace(4,5)">Dachi</a></li>
+					<li><a onClick="chace(5,5)">Battisputali</a></li>
+					<li><a onClick="chace(5,5)">Tangal</a></li>
+					<li><a onClick="chace(7,5)">Pashupati</a></li>
+				</ul>
+				</div>
+				<div id='plce6'>
+				<ul>
+					<li><a onClick="chace(1,6)">Sankhu</a></li>
+					<li><a onClick="chace(3,6)">Om Hospital</a></li>
+					<li><a onClick="chace(6,6)">Sundarijal</a></li>
+					<li><a onClick="chace(7,6)">Kapan</a></li>
+				</ul>
+				</div>
+				<div id='plce7'>
+				<ul>
+					<li><a onClick="chace(1,7)">Kesharmahal</a></li>
+					<li><a onClick="chace(3,7)">GairiDhara</a></li>
+					<li><a onClick="chace(4,7)">Lazimpat</a></li>
+					<li><a onClick="chace(5,7)">King's Way</a></li>
+					<li><a onClick="chace(6,7)">Thamel</a></li>
+					<li><a onClick="chace(7,7)">Samakhusi</a></li>
+				</ul>
+				</div>
+				<div id='plce8'>
+				<ul>
+					<li><a onClick="chace(2,8)">Naya Bazar</a></li>
+					<li><a onClick="chace(4,8)">Nagarjun</a></li>
+					<li><a onClick="chace(4,8)">Swoyambhu</a></li>
+					<li><a onClick="chace(5,8)">Bishnumati</a></li>
+					<li><a onClick="chace(5,8)">Maharajgunj-1</a></li>
+					<li><a onClick="chace(6,8)">Dharmasthali</a></li>
+				</ul>
+				</div>
+				<div id='plce9'>
+				<ul>
+					<li><a onClick="chace(1,9)">Tahachal</a></li>
+					<li><a onClick="chace(2,9)">Thankot</a></li>
+					<li><a onClick="chace(3,9)">Kalimati</a></li>
+					<li><a onClick="chace(5,9)">Kalanki</a></li>
+					<li><a onClick="chace(6,9)">Rope Way</a></li>
+					<li><a onClick="chace(7,9)">Balaju</a></li>
+					<li><a onClick="chace(7,9)">Swoyambhu</a></li>
+				</ul>
+				</div>
+				<div id='plce10'>
+				<ul>
+					<li><a onClick="chace(2,10)">Dhulikhel</a></li>
+					<li><a onClick="chace(3,10)">Sanga</a></li>
+					<li><a onClick="chace(6,10)">Nala</a></li>
+					<li><a onClick="chace(6,10)">Khawa</a></li>
+					<li><a onClick="chace(7,10)">Aspatal</a></li>
+					<li><a onClick="chace(7,10)">Khopashi</a></li>
+					<li><a onClick="chace(7,10)">Panauti</a></li>
+				</ul>
+				</div>
+				<div id='plce11'>
+				<ul>
+					<li><a onClick="chace(1,11)">Thahathali</a></li>
+					<li><a onClick="chace(4,11)">Sanepa</a></li>
+					<li><a onClick="chace(4,11)">Teku</a></li>
+					<li><a onClick="chace(4,11)">Patan</a></li>
+				</ul>
+				</div>
+				<div id='plce12'>
+				<ul>
+					<li><a onClick="chace(1,12)">Kamaladi</a></li>
+					<li><a onClick="chace(2,12)">Asan</a></li>
+					<li><a onClick="chace(3,12)">MahaBaudha</a></li>
+					<li><a onClick="chace(6,12)">DurbarMarg</a></li>
+					<li><a onClick="chace(7,12)">Bagbazar</a></li>
+				</ul>
+				</div>
+				<div id='plce13'>
+				<ul>
+					<li><a onClick="chace(1,13)">Budhanilkantha</a></li>
+					<li><a onClick="chace(2,13)">BansBari</a></li>
+					<li><a onClick="chace(3,13)">Baluwatar</a></li>
+					<li><a onClick="chace(3,13)">American Embassy</a></li>
+					<li><a onClick="chace(3,13)">Gongabu</a></li>
+					<li><a onClick="chace(5,13)">Dhapashi</a></li>
+					<li><a onClick="chace(7,13)">Golfutar</a></li>
+				</ul>
+				</div>
+				<div id='plce14'>
+				<ul>
+					<li><a onClick="chace(4,14)">Balkumari</a></li>
+					<li><a onClick="chace(6,14)">Thimi</a></li>
+					<li><a onClick="chace(7,14)">Sallaghari</a></li>
+				</ul>
+				</div>
+				<div id='plce15'>
+				<ul>
+					<li><a onClick="chace(1,15)">Khichapokhari</a></li>
+					<li><a onClick="chace(2,15)">Tripureshwor</a></li>
+					<li><a onClick="chace(4,15)">Newroad</a></li>
+					<li><a onClick="chace(6,15)">Bhotebahal</a></li>
+				</ul>
+				</div>
+				<div id='plce16'>
+				<ul>
+					<li><a onClick="chace(1,16)">BhrikutiMandap</a></li>
+					<li><a onClick="chace(3,16)">Kalikasthan</a></li>
+					<li><a onClick="chace(5,16)">Anamnagar</a></li>
+					<li><a onClick="chace(7,16)">Putalisadak</a></li>
+				</ul>
+				</div>
+				<div id='plce17'>
+				<ul>
+					<li><a onClick="chace(3,17)">Matatirtha</a></li>
+				</ul>
+				</div>
+				<div id='plce18'>
+				<ul>
+					<li><a onClick="chace(3,18)">Pipley</a></li>
+					<li><a onClick="chace(3,18)">Palanchowk</a></li>
+					<li><a onClick="chace(5,18)">Melamchi</a></li>
+					<li><a onClick="chace(6,18)">Panchkhal</a></li>
+				</ul>
+				</div>
+		</div>
 	</div>
-	<div id='plce1'>
-	<a onClick="chace(1,1)">MangalBajar</a>
-	<a onClick="chace(2,1)">Pharphing</a>
-	<a onClick="chace(3,1)">Patan</a>
-	<a onClick="chace(4,1)">RingRoad</a>
-	<a onClick="chace(5,1)"> Saibu</a>
-	<a onClick="chace(6,1)">Radio Nepal</a>
-	<a onClick="chace(6,1)">Pulchowk</a>
-	<a onClick="chace(7,1)">Jawalakhel</a>
-	<a onClick="chace(7,1)">Chapagaun</a>
-	</div>
-	<div id='plce2'>
-	<a onClick="chace(2,2)">Byashi</a>
-	<a onClick="chace(5,2)">Katunjey</a>
-	<a onClick="chace(5,2)">NalinChowk</a>
-	<a onClick="chace(6,2)">Nagarkot</a>
-	<a onClick="chace(6,2)">Brick</a>
-	</div>
-	<div id='plce3'>
-	<a onClick="chace(1,3)">Tripureshwor</a>
-	<a onClick="chace(1,3)">Tahachal</a>
-	<a onClick="chace(2,3)">Kalimati</a>
-	<a onClick="chace(3,3)">Thankot</a>
-	<a onClick="chace(4,3)">Pulchowk</a>
-	<a onClick="chace(6,3)">Bhimsensthan</a>
-	<a onClick="chace(7,3)">Kirtipur</a>
-	</div>
-	<div id='plce4'>
-	<a onClick="chace(1,4)">Baneshwor</a>
-	<a onClick="chace(1,4)">Koteshwor</a>
-	<a onClick="chace(1,4)">Bagmati</a>
-	<a onClick="chace(2,4)">Imadol</a>
-	<a onClick="chace(2,4)">Gothatar</a>
-	<a onClick="chace(3,4)">Godawari-1</a>
-	<a onClick="chace(3,4)">Conference-hall</a>
-	<a onClick="chace(4,4)">New Airport</a>
-	<a onClick="chace(4,4)">DhobiKhola</a>
-	<a onClick="chace(5,4)">Purano Airport</a>
-	<a onClick="chace(6,4)">Lubhu</a>
-	<a onClick="chace(7,4)">Sankhamul</a>
-	</div>
-	<div id='plce5'>
-	<a onClick="chace(1,5)">Jorpati</a>
-	<a onClick="chace(3,5)">Naxal</a>
-	<a onClick="chace(3,5)">Airport</a>
-	<a onClick="chace(4,5)">Dhobikhola</a>
-	<a onClick="chace(4,5)">Dachi</a>
-	<a onClick="chace(5,5)">Battisputali</a>
-	<a onClick="chace(5,5)">Tangal</a>
-	<a onClick="chace(7,5)">Pashupati</a>
-	</div>
-	<div id='plce6'>
-	<a onClick="chace(1,6)">Sankhu</a>
-	<a onClick="chace(3,6)">Om Hospital</a>
-	<a onClick="chace(6,6)">Sundarijal</a>
-	<a onClick="chace(7,6)">Kapan</a>
-	</div>
-	<div id='plce7'>
-	<a onClick="chace(1,7)">Kesharmahal</a>
-	<a onClick="chace(3,7)">GairiDhara</a>
-	<a onClick="chace(4,7)">Lazimpat</a>
-	<a onClick="chace(5,7)">King's Way</a>
-	<a onClick="chace(6,7)">Thamel</a>
-	<a onClick="chace(7,7)">Samakhusi</a>
-	</div>
-	<div id='plce8'>
-	<a onClick="chace(2,8)">Naya Bazar</a>
-	<a onClick="chace(4,8)">Nagarjun</a>
-	<a onClick="chace(4,8)">Swoyambhu</a>
-	<a onClick="chace(5,8)">Bishnumati</a>
-	<a onClick="chace(5,8)">Maharajgunj-1</a>
-	<a onClick="chace(6,8)">Dharmasthali</a>
-	</div>
-	<div id='plce9'>
-	<a onClick="chace(1,9)">Tahachal</a>
-	<a onClick="chace(2,9)">Thankot</a>
-	<a onClick="chace(3,9)">Kalimati</a>
-	<a onClick="chace(5,9)">Kalanki</a>
-	<a onClick="chace(6,9)">Rope Way</a>
-	<a onClick="chace(7,9)">Balaju</a>
-	<a onClick="chace(7,9)">Swoyambhu</a>
-	</div>
-	<div id='plce10'>
-	<a onClick="chace(2,10)">Dhulikhel</a>
-	<a onClick="chace(3,10)">Sanga</a>
-	<a onClick="chace(6,10)">Nala</a>
-	<a onClick="chace(6,10)">Khawa</a>
-	<a onClick="chace(7,10)">Aspatal</a>
-	<a onClick="chace(7,10)">Khopashi</a>
-	<a onClick="chace(7,10)">Panauti</a>
-	</div>
-	<div id='plce11'>
-	<a onClick="chace(1,11)">Thahathali</a>
-	<a onClick="chace(4,11)">Sanepa</a>
-	<a onClick="chace(4,11)">Teku</a>
-	<a onClick="chace(4,11)">Patan</a>
-	</div>
-	<div id='plce12'>
-	<a onClick="chace(1,12)">Kamaladi</a>
-	<a onClick="chace(2,12)">Asan</a>
-	<a onClick="chace(3,12)">MahaBaudha</a>
-	<a onClick="chace(6,12)">DurbarMarg</a>
-	<a onClick="chace(7,12)">Bagbazar</a>
-	</div>
-	<div id='plce13'>
-	<a onClick="chace(1,13)">Budhanilkantha</a>
-	<a onClick="chace(2,13)">BansBari</a>
-	<a onClick="chace(3,13)">Baluwatar</a>
-	<a onClick="chace(3,13)">American Embassy</a>
-	<a onClick="chace(3,13)">Gongabu</a>
-	<a onClick="chace(5,13)">Dhapashi</a>
-	<a onClick="chace(7,13)">Golfutar</a>
-	</div>
-	<div id='plce14'>
-	<a onClick="chace(4,14)">Balkumari</a>
-	<a onClick="chace(6,14)">Thimi</a>
-	<a onClick="chace(7,14)">Sallaghari</a>
-	</div>
-	<div id='plce15'>
-	<a onClick="chace(1,15)">Khichapokhari</a>
-	<a onClick="chace(2,15)">Tripureshwor</a>
-	<a onClick="chace(4,15)">Newroad</a>
-	<a onClick="chace(6,15)">Bhotebahal</a>
-	</div>
-	<div id='plce16'>
-	<a onClick="chace(1,16)">BhrikutiMandap</a>
-	<a onClick="chace(3,16)">Kalikasthan</a>
-	<a onClick="chace(5,16)">Anamnagar</a>
-	<a onClick="chace(7,16)">Putalisadak</a>
-	</div>
-	<div id='plce17'>
-	<a onClick="chace(3,17)">Matatirtha</a>
-	</div>
-	<div id='plce18'>
-	<a onClick="chace(3,18)">Pipley</a>
-	<a onClick="chace(3,18)">Palanchowk</a>
-	<a onClick="chace(5,18)">Melamchi</a>
-	<a onClick="chace(6,18)">Panchkhal</a>	
-	</div>
-	</div>
-
 </section>
 <script type='text/javascript' src='lsr.js'></script>
 </body>
