@@ -68,7 +68,7 @@ nav a:hover{
         width: 200px;
         height: 20px;
         color: #fff;
-        text-align: center;
+		text-align: center;
         }
 
 #search{
@@ -143,7 +143,7 @@ nav, nav a:hover, #search_group, #routine, footer, footer a:hover, h1{
         }
         
 section #background {
-        background-color: rgba(000,000,000, 0.7);
+        background-color: rgba(000,000,000, 0.9);
         height: auto;
         display: none;
 	position: absolute;
@@ -153,31 +153,51 @@ section #background {
         }
 
 #plce1, #plce2, #plce3, #plce4, #plce5, #plce6, #plce7, #plce8, #plce9, #plce10, #plce11, #plce12, #plce13, #plce14, #plce15, #plce16, #plce17, #plce18, #checkout{
-	display:none;
+	display: none;
 	}
-        
+
+#plce1, #plce2, #plce3, #plce4, #plce5, #plce6, #plce7, #plce8, #plce9, #plce10, #plce11, #plce12, #plce13, #plce14, #plce15, #plce16, #plce17, #plce18{
+		margin-left: 30px;
+		font: small-caps 20px calibri;
+		cursor: hand;
+		cursor: pointer;
+	}
+	
 #location_topic {
-	width:90%;
+	width: auto;
 	}
 
 #checkout
 	{
-	font-size:24px;
 	position:absolute;
 	width:80%;
-	height:40%;
-	top:40%;
+	height: auto;
+	top: 10%;
 	left:8%;
 	background-color: rgba(000,000,000, 0.9);
+	overflow: hidden;
+	transition: all 0.5s;
         }
 
+.locate{
+	font: small-caps 30px calibri;
+	margin: 20px 0 10px 0;
+	text-align: center;
+	}
+#selectplace{
+	font: small-caps 20px calibri;
+	cursor: hand;
+	cursor: pointer;
+	margin-left: 30px;
+	}
 #about_us{
         font-family: calibri;
         padding: 1px 0 10px 30px;
         }
 
 .nlsr{
-        font-size: 16px;
+        margin: 30px 10px 0 10px;
+		font-size: 16px;
         }
 
 .developed_by{
@@ -202,12 +222,15 @@ section #background {
         float: left;
         display: inline-block;
                 }
-/*.X,#close_X{
+.X,#close_X{
 	font-size:22px;
+	font-family: calibri;
 	position:absolute;
 	top:0%;
 	left:97%;
-		}*/
+	cursor: hand;
+	cursor: pointer;
+		}
                 
 .name:hover{
 		text-decoration: underline;
