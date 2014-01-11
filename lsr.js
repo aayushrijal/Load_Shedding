@@ -23,7 +23,6 @@ var grp123 = document.getElementById("groupshow");
 window.onload = function() {
         //php compatibility update with the values of php variables in if statement
         if(typeof b !== "undefined"){
-                alert("value of array changed");
                 for(i=0;i<7;i++){
                         for(j=0;j<4;j++){
                                 a[i][j]=b[i][j];
