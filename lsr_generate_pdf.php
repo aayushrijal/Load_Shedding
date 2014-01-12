@@ -1,5 +1,5 @@
 <?php
-header('Context-type : application/.pdf');   //code not effective
+//header('Context-type : application/.pdf');   //code not effective
 include('downloaded_libraries/font/courier.php');   // for hosting in server
 include('downloaded_libraries/fpdf.php');           // for hosting in server
 //include('courier.php');	code not working
@@ -24,7 +24,7 @@ include('downloaded_libraries/fpdf.php');           // for hosting in server
 	
 	$pdf = new FPDF(); // a object of FPDF class
 	$pdf->AddPage();	
-		$pdf->AddFont(courier,'IB','courier.php');
+		$pdf->AddFont('courier','IB','courier.php');
 		$pdf->SetFont('courier','BU',16);	
 		$pdf->Cell(0,10,'NEPAL LOADSHEDDING ROUTINE',0,2,'C');  // For the title of the pdf file 
 		
