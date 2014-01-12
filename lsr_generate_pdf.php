@@ -1,9 +1,11 @@
 <?php
-  header('Context-type : application/.pdf');
-//  include('/var/www/downloaded_libraries/font/courier.php');
- // include('/var/www/downloaded_libraries/fpdf.php');
- include('fpdf.php');
- include('courier.php');	
+header('Context-type : application/.pdf');   //code not effective
+include('downloaded_libraries/font/courier.php');   // for hosting in server
+include('downloaded_libraries/fpdf.php');           // for hosting in server
+//include('courier.php');	code not working
+//include('fpdf.php');          code not working
+//include('/var/www/downloaded_libraries/font/courier.php');  for my local computer
+//include('/var/www/downloaded_libraries/fpdf.php');  for my local computer
 /* a variable set to generate the pdf */
 	$g1 = array("03-09","13-18");
 	$g2 = array("04-10","14-19");
@@ -22,13 +24,13 @@
 	
 	$pdf = new FPDF(); // a object of FPDF class
 	$pdf->AddPage();	
-		$pdf->AddFont('Courier','','courier.php');
+		$pdf->AddFont(courier,'IB','courier.php');
 		$pdf->SetFont('courier','BU',16);	
 		$pdf->Cell(0,10,'NEPAL LOADSHEDDING ROUTINE',0,2,'C');  // For the title of the pdf file 
 		
 			
 
-		$pdf->SetFont('courier','i',12);
+		$pdf->SetFont('courier','I',12);
 		for($i=0;$i<=6;$i++){
 				$set_value = $i;
 				$flag = 7 - $set_value;
