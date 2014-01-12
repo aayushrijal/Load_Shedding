@@ -13,6 +13,7 @@ var intid,day_select,dselect_condn,day_flag=1;
 //opacity_id=Opacitytickingswitch
 var opacity_id,opaCT=0;
 var mint=now.getMinutes();
+var dragIndex=0,prevLoc;
 mint=60-mint;//minutes remaining
 var sec=59;
 //ampm1&2 start and end times of the day with comverted 12 hour values from 24 hour ones
@@ -20,9 +21,34 @@ var ampm1,ampm2;
 //grouplist's id assigned to a variable
 var grp123 = document.getElementById("groupshow");
 
+function resized(){
+	var width=0;
+	//getting the width of the browser cross browser compatibility
+	if(window.innerHeight){
+		width=window.innerWidth;
+	}else if(document.documentElement && document.documentElement.clientHeight){
+		width=document.documentElement.clientWidth;
+	}else if(document.body){
+		width=document.body.clientWidth;
+	}
+	if(width<1024){	
+for(i=4;i>0;i--){
+		document.getElementById('boxed'+i).style.display="inline-block";//"inline-table";
+};
+	}else{
+for(i=4;i>0;i--){
+		document.getElementById('boxed'+i).style.display="inline";
+	};
+	}
+}
+window.onresize=function(){
+	resized();
+};
+	
 window.onload = function() {
         //php compatibility update with the values of php variables in if statement
-        if(typeof b !== "undefined"){
+	resized();        
+	if(typeof b !== "undefined"){
                 for(i=0;i<7;i++){
                         for(j=0;j<4;j++){
                                 a[i][j]=b[i][j];
@@ -222,27 +248,141 @@ function opi()
 						//document.getElementById("background").style.display="block";
 						console.log(opaCT);
 }*/
-function slctplce(number)
-{
-document.getElementById('selectplace').style.display="none";
-document.getElementById('plce'+number).style.display="block";
+function slctplce(number){
+	document.getElementById('selectplace').style.display="none";
+	document.getElementById('plce'+number).style.display="block";
 }
-function chace(number1,number2)
-{
-close_location();
-document.getElementById('plce'+number2).style.display="none";
-
+function chace(number1,number2){
+	close_location();
+	document.getElementById('plce'+number2).style.display="none";
 ace(number1);
 }
-function location_select()
-{
-document.getElementById('checkout').style.display="block";
+function location_select(){
+	document.getElementById('checkout').style.display="block";
 }
-function close_location()
-{
-document.getElementById('selectplace').style.display="block";
-document.getElementById('checkout').style.display="none";
-for(i=1;i<=18;i++){
-document.getElementById('plce'+i).style.display="none";
+function close_location(){
+	document.getElementById('selectplace').style.display="block";
+	document.getElementById('checkout').style.display="none";
+	for(i=1;i<=18;i++){
+		document.getElementById('plce'+i).style.display="none";
+	}
 }
+
+//cross platform event handler functions for drag and drop animation via javascript
+var eventUtility = {
+    addEvent : (function() {
+        if (typeof addEventListener !== "undefined") {
+            return function(obj, evt, fn) {
+                obj.addEventListener(evt, fn, false);
+            };
+        } else {
+            return function(obj, evt, fn) {
+                obj.attachEvent("on" + evt, fn);
+            };
+        }
+    }()),
+    removeEvent : (function() {
+        if (typeof removeEventListener !== "undefined") {
+            return function(obj, evt, fn) {
+                obj.removeEventListener(evt, fn, false);
+            };
+        } else {
+            return function(obj, evt, fn) {
+                obj.detachEvent("on" + evt, fn);
+            };
+        }
+    }()),
+    getTarget : (function() {
+        if (typeof addEventListener !== "undefined") {
+            return function(event) {
+                return event.target;
+            };
+        } else {
+            return function(event) {
+                return event.srcElement;
+            };
+        }
+    }()),
+    preventDefault : (function() {
+        if (typeof addEventListener !== "undefined") {
+            return function(event) {
+                event.preventDefault();
+            };
+        } else {
+            return function(event) {
+                event.returnValue = false;
+            };
+        }
+    }())
+};
+
+
+//end of cross platform...
+ var dragObj = {
+    setDragObj : function(el, mouseX, mouseY) {
+        this.el = el;
+        this.relativeLeft = el.offsetLeft - mouseX;
+        this.relativeTop = el.offsetTop - mouseY;
+        this.el.style.zIndex = this.zIndex++;
+    },
+    dragTo : function(x, y) {
+	if(x>10){
+	dragIndex=1;
+	}
+	/*else
+	{
+	if(x<-10){
+	dragIndex=-1;
+		}
+	}*/
+	/*this.el.style.left = x + this.relativeLeft + "px";
+	prevLoc=this.relativeLeft;
+	setTimeout(function(){
+		this.el.style.left=this.relativeLeft-x+"px";
+	},100);*/
+        //this.el.style.top = y + this.relativeTop + "px";
+    },
+    dragging : false,
+    el : null,
+    relativeTop : 0,
+    relativeLeft:0,
+    };
+
+function mouseHandler(event) {
+    var eSrc = eventUtility.getTarget(event);
+    var type = event.type;
+    var x = event.clientX + document.body.scrollLeft;
+    var y = event.clientY + document.body.scrollTop;
+
+    switch (type) {
+        case "mousedown":
+            if (eSrc.className.indexOf("draggable") > -1) {
+                dragObj.dragging = true;
+                dragObj.setDragObj(eSrc, x, y);
+            }
+            break;
+        case "mouseup":
+		dragObj.dragging = false;
+		//dragObj.relativeLeft-=PrevLoc;
+		/*if(dragIndex==-1){
+			prv();
+		}
+		else*/
+		 if(dragIndex==1){
+			nxt();
+		}
+		dragIndex=0;
+            
+            break;
+
+        case "mousemove":
+            if (dragObj.dragging) {
+                dragObj.dragTo(x, y);
+            }
+            break;
+    }
 }
+
+eventUtility.addEvent(document, "mousedown", mouseHandler);
+eventUtility.addEvent(document, "mouseup", mouseHandler);
+eventUtility.addEvent(document, "mousemove", mouseHandler);

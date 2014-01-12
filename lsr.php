@@ -137,30 +137,31 @@
                 
                         <div class='developed_by'><dt>Developed By</dt></div>
                                 <div class='developers'>
+				<div id='boxed4'>
                                         <div class='picture'><img src='a2.png' height='50px' width='40px'></div>        
                                         <div class='aashish'>
                                                 <div class='name'><a>Aashish Manandhar</a></div>
                                                 <div class='post'>Developer</div>
                                         </div>
-                        
+                        </div><div id='boxed3'>
                                         <div class='picture'><img src='a1.png' height='50px' width='40px'></div>
                                         <div class='aayush'>
                                                 <div class='name'><a>Aayush Rijal</a></div>
                                                 <div class='post'>Deginer</div>
                                         </div>
-                        		
+                        </div><div id='boxed2'>		
 					<div class='picture'><img src='a7.png' height='50px' width='40px'></div>
                                         <div class='ankit'>
                                                 <div class='name'><a>Ankit Shrestha</a></div>
                                                 <div class='post'>Developer</div>
                                         </div>                                     
-                                        
+                        </div><div id='boxed1'>                
                                         <div class='picture'><img src='a4.png' height='50px' width='40px'></div>
                                         <div class='ankit'>
                                                 <div class='name'><a>Abhishek Khatri</a></div>
                                                 <div class='post'>Data Analyst</div>
                                         </div>
-                                        
+                          </div> 
                                         <div class='X'><a onClick="contact()">x</a></div>                                        
                                         <div class='red'>
                                                 <img src='red.png' height='70px' width='70px'>
